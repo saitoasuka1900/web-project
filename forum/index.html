@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>saitoasuka's forum</title>
+
+    <meta name="author" content="saito asuka">
+    <meta name="description" content="forum">
+
+    <link rel="stylesheet" type="text/css" href="css/CanvasSetting.css">
+    <link rel="stylesheet" type="text/css" href="css/Login.css">
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/check.js"></script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="text/javascript" src="js/agar.js?action=test"></script>
+<div class="Login">
+    <button style="position: relative;left: 25%" class="w3-btn w3-round-large w3-teal"
+            onclick="document.getElementById('LoginModal').style.display='block'">
+        登录
+    </button>
+    <button style="position: relative;left: 65%" class="w3-btn w3-round-large w3-teal"
+            onclick="document.getElementById('RegisterModal').style.display='block'">
+        注册
+    </button>
+</div>
+<input type="text" style="display: none;"/>
+<input type="password" style="display: none;"/>
+<div id="LoginModal" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <form id="login-form" class="w3-container">
+            <div class="w3-section">
+                <label><b>Username</b></label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username"
+                       name="username" autocomplete="off" id="login-username">
+                <label><b>Password</b></label>
+                <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password"
+                       autocomplete="new-password">
+                <button class="w3-button w3-block w3-green w3-section w3-padding" name="login" type="button"
+                        onclick="login_check()" value="Login">Login
+                </button>
+            </div>
+        </form>
+
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('LoginModal').style.display='none'" type="button"
+                    class="w3-button w3-red">Cancel
+            </button>
+        </div>
+    </div>
+</div>
+<div id="RegisterModal" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <form id="register-form" class="w3-container">
+            <div class="w3-section">
+                <label><b>Username</b></label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Username"
+                       name="username" autocomplete="off">
+                <label><b>Password</b></label>
+                <input class="w3-input w3-border" type="password" placeholder="Password" name="password"
+                       autocomplete="new-password">
+                <label><b>Age</b></label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Age" name="age">
+                <label><b>Job</b></label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Job" name="job">
+                <label><b>Sex</b></label>
+                <p>
+                    <label style="position: relative;left: 0%">
+                        <input class="w3-radio" type="radio" name="sex" value="男">男
+                    </label>
+                    <label style="position: relative;left: 20%">
+                        <input class="w3-radio" type="radio" name="sex" value="女">女
+                    </label>
+                    <label style="position: relative;left: 40%">
+                        <input class="w3-radio" type="radio" name="sex" value="保密">保密
+                    </label>
+                </p>
+                <button class="w3-button w3-block w3-green w3-section w3-padding" name="register" type="button"
+                        value="register" onclick="register_check()">Register
+                </button>
+            </div>
+        </form>
+
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('RegisterModal').style.display='none'" type="button"
+                    class="w3-button w3-red">Cancel
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
